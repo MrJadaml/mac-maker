@@ -1,0 +1,26 @@
+#!/bin/sh
+
+fancy_echo 'Checking on Python installation...'
+
+if ! brew_is_installed "python3"; then
+  brew bundle --file=- <<EOF
+  brew 'pyenv'
+EOF
+  append_to_file "$HOME/.zshrc" 'if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi'
+
+  # pyenv currently doesn't have a convenience version to use, e.g., "latest",
+  # so we check for the latest version against Homebrew instead.
+  latest_python_3="$(brew info python3 | egrep -o "3\.\d+\.\d+" | head -1)"
+
+  if ! pyenv versions | ag "$latest_python_3" > /dev/null; then
+    pyenv install "$latest_python_3"
+    pyenv global "$latest_python_3"
+    pyenv rehash
+  fi
+else
+  brew bundle --file=- <<EOF
+  brew 'python3'
+EOF
+fi
+
+fancy_echo '...Finished Python installation checks.'

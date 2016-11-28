@@ -1,0 +1,49 @@
+#!/bin/sh
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  printf "\n#######################################################"
+  printf "\n$fmt\n" "$@"
+  printf "#######################################################\n"
+}
+
+append_to_file() {
+  local file="$1"
+  local text="$2"
+
+  if [ "$file" = "$HOME/.zshrc" ]; then
+    if [ -w "$HOME/.zshrc.local" ]; then
+      file="$HOME/.zshrc.local"
+    else
+      file="$HOME/.zshrc"
+    fi
+  fi
+
+  if ! grep -qs "^$text$" "$file"; then
+    printf "\n%s\n" "$text" >> "$file"
+  fi
+}
+
+brew_is_installed() {
+  brew list -1 | grep -Fqx "$1"
+}
+
+gem_install_or_update() {
+  if gem list "$1" | grep "^$1 ("; then
+    fancy_echo "Updating %s ..." "$1"
+    gem update "$@"
+  else
+    fancy_echo "Installing %s ..." "$1"
+    gem install "$@"
+  fi
+}
+
+app_is_installed() {
+  local app_name
+  app_name=$(echo "$1" | cut -d'-' -f1)
+
+  find /Applications -iname "$app_name*" -maxdepth 1 | egrep '.*' > /dev/null
+}
+
+export -f fancy_echo append_to_file brew_is_installed gem_install_or_update app_is_installed

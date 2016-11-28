@@ -1,0 +1,15 @@
+#!/bin/sh
+
+fancy_echo 'Checking on Ruby installation...'
+
+append_to_file "$HOME/.gemrc" 'gem: --no-document'
+
+if ! command -v rbenv >/dev/null; then
+  if ! command -v rvm >/dev/null; then
+    fancy_echo 'Installing RVM and the latest Ruby...'
+
+    curl -L https://get.rvm.io | bash -s stable --ruby || echo "An error occured. Check the logs"
+  fi
+fi
+
+fancy_echo '...Finished Ruby installation checks.'

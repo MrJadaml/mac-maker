@@ -1,0 +1,74 @@
+#!/bin/sh
+
+fancy_echo "Installing zsh..."
+
+# Make ~/.zshrc if it does not exsit
+if [ ! -f "$HOME/.zshrc" ]; then
+  touch "$HOME/.zshrc"
+fi
+
+append_to_file "$HOME/.zshrc" 'export PATH="$HOME/.bin:$PATH"'
+
+# Unless shell is not already Zsh or if running Continuous Integration system,
+# set shell to Zsh
+case "$SHELL" in
+  */zsh) : ;;
+  *)
+    if [ -z "$CI" ]; then
+      fancy_echo "Changing your shell to zsh ..."
+      chsh -s "$(which zsh)"
+    else
+      fancy_echo "CI System detected, will not change shells"
+    fi
+    ;;
+esac
+
+##################################################################
+# A plugin manager for zsh, inspired by oh-my-zsh and vundle
+# http://antigen.sharats.me
+##################################################################
+if [ ! -f "$HOME/.zsh/antigen/" ]; then
+  fancy_echo "Installing the Antigen plugin manager ◬..."
+
+  mkdir "$HOME/.zsh"
+  touch "$HOME/.zsh/antigen.zsh"
+
+  curl https://cdn.rawgit.com/zsh-users/antigen/v1.2.3/bin/antigen.zsh > ~/.zsh/antigen.zsh
+
+  append_to_file "$HOME/.zshrc" 'ZSH="$HOME/.zsh"'
+  append_to_file "$HOME/.zshrc" "source $ZSH/antigen.zsh"
+
+  fancy_echo "Bundling antigen plugins ..."
+
+  # Load oh-my-zsh as default repo for antigen
+  append_to_file "$HOME/.zshrc" "antigen use oh-my-zsh"
+
+  # Oh-my-zsh/default bundles
+  append_to_file "$HOME/.zshrc" "antigen bundle cloudapp"
+  append_to_file "$HOME/.zshrc" "antigen bundle common-aliases"
+  append_to_file "$HOME/.zshrc" "antigen bundle encode64"
+  append_to_file "$HOME/.zshrc" "antigen bundle git"
+  append_to_file "$HOME/.zshrc" "antigen bundle git-extras"
+  append_to_file "$HOME/.zshrc" "antigen bundle heroku"
+  append_to_file "$HOME/.zshrc" "antigen bundle httpie"
+  append_to_file "$HOME/.zshrc" "antigen bundle jsontools"
+  append_to_file "$HOME/.zshrc" "antigen bundle lol"
+  append_to_file "$HOME/.zshrc" "antigen bundle node"
+  append_to_file "$HOME/.zshrc" "antigen bundle nyan"
+  append_to_file "$HOME/.zshrc" "antigen bundle pip"
+  append_to_file "$HOME/.zshrc" "antigen bundle tmux"
+  append_to_file "$HOME/.zshrc" "antigen bundle web-search"
+
+  # Syntax highlighting bundle
+  append_to_file "$HOME/.zshrc" "antigen bundle zsh-users/zsh-syntax-highlighting"
+
+  # Themes
+  append_to_file "$HOME/.zshrc" "antigen theme robbyrussell"
+
+  # Apply bundles
+  append_to_file "$HOME/.zshrc" "antigen apply"
+else
+  echo "Antigen appears to already be installed ..."
+fi
+
+fancy_echo "...Finsihed zsh installation"

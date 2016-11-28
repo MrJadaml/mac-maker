@@ -1,0 +1,31 @@
+#!/bin/sh
+
+fancy_echo "Bundling antigen plugins ..."
+
+# Load oh-my-zsh as default repo for antigen
+antigen use oh-my-zsh
+
+# Oh-my-zsh/default bundles
+antigen bundle cloudapp
+antigen bundle common-aliases
+antigen bundle encode64
+antigen bundle git
+antigen bundle git-extras
+antigen bundle heroku
+antigen bundle httpie
+antigen bundle jsontools
+antigen bundle lol
+antigen bundle node
+antigen bundle nyan
+antigen bundle pip
+antigen bundle tmux
+antigen bundle web-search
+
+# Syntax highlighting bundle
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Themes
+antigen theme robbyrussell
+
+
+antigen apply

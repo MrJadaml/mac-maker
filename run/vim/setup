@@ -1,0 +1,7 @@
+#!/bin/sh
+
+fancy_echo "Setting up Vim ..."
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# eventually link up vimrc file to ~/.vimrc
