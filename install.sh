@@ -38,7 +38,7 @@ else
 fi
 
 fancy_echo "Installing formulas and casks from the Brewfile 🍺..."
-brew bundle
+brew bundle --file=/run/homebrew/Brewfile
 
 source ./run/node/setup
 source ./run/python/setup

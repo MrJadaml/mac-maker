@@ -1,0 +1,34 @@
+cask_args appdir: '/Applications'
+
+# taps are Formulaes/commands pulled from a Git repo
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'homebrew/services'
+
+# brew is used for installing MacOS dependencies/binaries
+brew 'ctags'
+brew 'bash'
+brew 'git'
+brew 'git-secrets'
+brew 'heroku-toolbelt'
+brew 'httpie'
+brew 'imagemagick'
+brew 'mas'
+brew 'openssl'
+brew 'phantomjs'
+brew 'postgresql'
+brew 'reattach-to-user-namespace'
+brew 'redis'
+brew 'tmux'
+brew 'vim'
+brew 'wget'
+brew 'zsh'
+
+# cask applications install
+file ./run/homebrew/brew-casks
+
+# mas applications install
+file ./run/homebrew/brew-mas
+
+# start psql cluster
+# brew services start postgresql

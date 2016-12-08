@@ -1,0 +1,10 @@
+# mas is used for installing Mac App Store applications
+# aka, applications not yet provided through cask
+
+# optional sign in to app store
+# you can provide pw here, or be prompted for it durring run time
+# mas signin example@mail.com "som3Rand0p@sswOrd'
+
+mas 'Pixelmator', id: 407963104
+mas 'Sip', id: 507257563
+mas 'Xcode', id: 497799835
