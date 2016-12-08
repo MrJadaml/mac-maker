@@ -23,10 +23,16 @@ case "$SHELL" in
     ;;
 esac
 
+# `Source` is not currently working as expected. Running Antigen directly for the time being.
+# source ./antigen/setup
+
+
 ##################################################################
-# A plugin manager for zsh, inspired by oh-my-zsh and vundle
-# http://antigen.sharats.me
+# Antigen:                                                       #
+# A plugin manager for zsh, inspired by oh-my-zsh and vundle     #
+# http://antigen.sharats.me                                      #
 ##################################################################
+
 if [ ! -f "$HOME/.zsh/antigen/" ]; then
   fancy_echo "Installing the Antigen plugin manager ◬..."
 

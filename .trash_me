@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# import helper functions
-. ./helpers/main.sh
-
-source .trash2.sh
-source .trash3
-
-echo 'done'

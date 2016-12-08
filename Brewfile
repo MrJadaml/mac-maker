@@ -48,3 +48,6 @@ cask 'slack'
 # mas 'Pixelmator', id: 407963104
 # mas 'Sip', id: 507257563
 # mas 'Xcode', id: 497799835
+
+# start psql cluster
+# brew services start postgresql
