@@ -38,7 +38,14 @@ else
 fi
 
 fancy_echo "Installing formulas and casks from the Brewfile 🍺..."
-brew bundle --file=/run/homebrew/Brewfile
+brew bundle --file=./run/homebrew/Brewfile
+
+echo "Installing cask apps..."
+brew bundle --file=./run/homebrew/brew-casks
+
+echo "Installing Mas apps, including Xcode. This may take a little while..."
+brew bundle --file=./run/homebrew/brew-mas
+
 
 source ./run/node/setup
 source ./run/python/setup
@@ -46,4 +53,4 @@ source ./run/ruby/setup
 
 source ./run/osx/setup
 
-fancy_echo 'All done!'
+fancy_echo "All done!"

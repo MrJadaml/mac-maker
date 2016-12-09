@@ -2,11 +2,10 @@
 
 # ~/.macos — https://mths.be/macos
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
+# Close System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-fancy_echo "Setting osx defaults 💽..."
+fancy_echo "Setting osx defaults 💽 ..."
 
 # Ask for the administrator password upfront
 sudo -v
@@ -15,7 +14,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
-fancy_echo "General UI/UX"
+echo "General UI/UX..."
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
@@ -28,6 +27,7 @@ fancy_echo "General UI/UX"
 sudo pmset -a standbydelay 86400
 
 # Always boot in verbose mode (not MacOS GUI mode)
+# Currenly not working in Sierra ^10.12 😞
 sudo nvram boot-args="-v"
 
 # Disable the sound effects on boot
@@ -120,7 +120,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 ###############################################################################
-fancy_echo "SSD-specific tweaks"
+echo "SSD-specific tweaks..."
 ###############################################################################
 
 # Disable hibernation (speeds up entering sleep mode)
@@ -137,7 +137,7 @@ sudo pmset -a hibernatemode 0
 sudo pmset -a sms 0
 
 ###############################################################################
-fancy_echo "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
+echo "Trackpad, mouse, keyboard, Bluetooth accessories, and input..."
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
@@ -193,7 +193,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
-fancy_echo "Screen"
+echo "Screen..."
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
@@ -216,7 +216,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
-fancy_echo "Finder"
+echo "Finder..."
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
@@ -311,7 +311,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
     Privileges -bool true
 
 ###############################################################################
-fancy_echo "Dock, Dashboard, and hot corners"
+echo "Dock, Dashboard, and hot corners..."
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -408,7 +408,7 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (
 # defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
-fancy_echo "Safari & WebKit"
+echo "Safari & WebKit..."
 ###############################################################################
 
 # Privacy: don’t send search queries to Apple
@@ -490,7 +490,7 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 ###############################################################################
-fancy_echo "Mail"
+echo "Mail..."
 ###############################################################################
 
 # Disable send and reply animations in Mail.app
@@ -515,7 +515,7 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 ###############################################################################
-fancy_echo "Terminal & iTerm 2"
+echo "Terminal & iTerm 2..."
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
@@ -537,7 +537,7 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
-fancy_echo "Time Machine"
+echo "Time Machine..."
 ###############################################################################
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
@@ -547,7 +547,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
-fancy_echo "Activity Monitor"
+echo "Activity Monitor..."
 ###############################################################################
 
 # Show the main window when launching Activity Monitor
@@ -564,7 +564,7 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
-fancy_echo "Address Book, Dashboard, iCal, TextEdit, and Disk Utility"
+echo "Contacts, Dashboard, iCal, TextEdit, and Disk Utility..."
 ###############################################################################
 
 # Enable the debug menu in Address Book
@@ -590,7 +590,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ###############################################################################
-fancy_echo "Mac App Store"
+echo "Mac App Store..."
 ###############################################################################
 
 # Enable the WebKit Developer Tools in the Mac App Store
@@ -621,14 +621,14 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
-fancy_echo "Photos"
+echo "Photos..."
 ###############################################################################
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
-fancy_echo "Messages"
+echo "Messages..."
 ###############################################################################
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
@@ -641,7 +641,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
-fancy_echo "Google Chrome & Google Chrome Canary"
+echo "Google Chrome & Google Chrome Canary..."
 ###############################################################################
 
 # Disable the all too sensitive backswipe on trackpads
@@ -660,4 +660,4 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+fancy_echo "Finished setting osx defaults.\n⚠️ Note that some of these changes require a logout/restart to take effect."

@@ -24,11 +24,5 @@ brew 'vim'
 brew 'wget'
 brew 'zsh'
 
-# cask applications install
-file ./run/homebrew/brew-casks
-
-# mas applications install
-file ./run/homebrew/brew-mas
-
 # start psql cluster
 # brew services start postgresql

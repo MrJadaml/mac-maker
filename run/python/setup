@@ -23,4 +23,10 @@ else
 EOF
 fi
 
+echo "Updating pip..."
+pip install --upgrade pip
+
+echo "Installing virtualenvwrapper..."
+pip install virtualenvwrapper
+
 fancy_echo '...Finished Python installation checks.'
