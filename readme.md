@@ -15,7 +15,7 @@ The *install.sh* script is what will be run upon executing the start-up command 
 This script will get Brew up and running on your machine 🍻.
 Durring the Brew install process the Brewfile will be ran which installs a number of binarys, libraries and applications.
 It is recommended that you look over this file and the supporting *brew-casks* and *brew-mas* files to customize the setup to your liking.
-Do note that Xcode is one of the items added in the `mas` bundle and can take quite a while to install.
+Do note that Xcode is one of the items added in the `mas` bundle and can take quite a while to install ⏰.
 
 After the Brew process is finished the *install.sh* script will begin to source the individual system modules/libraries to be installed.
 If you do not wish to have a particular module or library installed on your machine simply delete or comment out the line in the *install.sh* script where it is sourced in.
@@ -56,8 +56,64 @@ Be sure you are in the *dotfiles* directory.
 cd ~/projects/dotfiles
 ```
 
-Then enter the following command into your terminal:
+Then run the following command into your terminal:
 
 ```
 source install.sh
 ```
+
+## The Manifest 📕
+
+- Node
+- NVM
+
+- Python 3
+- Pyenv
+- Virtualenvwrapper
+
+- Ruby
+- RVM
+
+- Homebrew
+- ctags
+- bash | update
+- git | update
+- git-secrets
+- heroku-toolbelt
+- httpie
+- imagemagick
+- mas
+- openssl
+- phantomjs
+- postgresql
+- reattach-to-user-namespace
+- redis
+- tmux
+- vim | update
+- wget
+- zsh
+
+- antigen
+- oh-my-zsh
+
+- atom
+- alfred
+- cloud
+- dash
+- dropbox
+- firefox
+- github-desktop
+- google chrome
+- google chrome canary
+- iterm2
+- slack
+
+- evernote
+- memory
+- monodraw
+- moom
+- pixelmator
+- pocket
+- sip
+- snappyapp
+- xcode
