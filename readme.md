@@ -1,4 +1,15 @@
-### Project Ogranization
+# 🔧 Welcome to My Mac-Maker 💻
+
+This is, yet another, dev environment start-up script. My goal
+here was to break down the particular items being installed into
+individual modules. Each module is then sourced in with a single line in
+the main *install.sh* script. That makes it real easy to remove anything
+you do not want without worry of breaking other parts of this build.
+Likewise, if there is anything you think is missing that you want to
+add, the structure makes personal customization of this script really
+straight forward.
+
+## Project Ogranization
 
 The *install.sh* script is what will be run upon executing the start-up command listed below.
 This script will get Brew up and running on your machine 🍻.
@@ -16,23 +27,37 @@ These may be files that will be symlinked into *your* **HOME** 📂,
 or are provided as alternative options or further modularization for organizational purposes.
 For example in the *zsh* module both *antigen* (my personal preference) and *oh-my-zsh* are included.
 
-## Install
+## Install Instructions
+
+The following command will pull down this repo onto your machine, creating a `~/projects/dotfiles/` directory structure.
+
+```sh
+curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o ~/projects/dotfiles.tar.gz && tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/ -s /MrJadaml-mac-maker-b83e4c7/dotfiles/
+```
+
+Once the project is copied down I suggest you peek through it and make any modifications to suit your personal preferences.
 
 *⚠️ Note*
 Please have your email and password for the Apple Store ready.
 
 Brew mas will need accees to the App Store in order to download a number of applications.
-If you want to install these applications manually, please delete the following line in the *Brewfile*.
+If you want to install these applications manually, please delete the following "run" line in the *Brewfile*.
 
 ```sh
 # mas applications install
 file ./run/homebrew/brew-mas
 ```
 
-### Quick Install Command
+### Just run the script already!
 
-Run the following start-up command to kick of the installation if you do not wish to make any changes to this script.
+Be sure you are in the *dotfiles* directory.
 
-```sh
-git clone git@github.com:MrJadaml/grab.git && sh dotfiles/install.sh
+```
+cd ~/projects/dotfiles
+```
+
+Then enter the following command into your terminal:
+
+```
+source install.sh
 ```
