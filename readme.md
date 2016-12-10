@@ -9,6 +9,8 @@ Likewise, if there is anything you think is missing that you want to
 add, the structure makes personal customization of this script really
 straight forward.
 
+<hr>
+
 ## Project Ogranization
 
 The *install.sh* script is what will be run upon executing the start-up command listed below.
@@ -26,6 +28,8 @@ Some of the individual modules have additional dotfiles or supporting scripts fi
 These may be files that will be symlinked into *your* **HOME** 📂,
 or are provided as alternative options or further modularization for organizational purposes.
 For example in the *zsh* module both *antigen* (my personal preference) and *oh-my-zsh* are included.
+
+<hr>
 
 ## Install Instructions
 
@@ -61,6 +65,8 @@ Then run the following command into your terminal:
 ```
 source install.sh
 ```
+
+<hr>
 
 ## The Manifest 📕
 
@@ -117,3 +123,21 @@ source install.sh
 - sip
 - snappyapp
 - xcode
+
+<hr>
+
+#### Quick Reformating Guide. 💾
+
+Obviously, back up all the files you don't want to have blown away before going through this process.
+
+- Restart your computer and hold down `⌘ + r`.
+- Once you see the white  logo and a progress bar you can let go of `⌘ + r`
+- The "macOS Utilities" menu will pop up. Select the "Disk Utility" option from the list.
+- From the sidebar labeled "Internal" click on sub hardive icon labled "Macintosh HD"
+- From the row of icons at the top, click "Erase"
+- A popup menu will appear with a field for the "Name" and "Format".
+  Just leave the defaults and click the "Erase" button in the bottom right.
+- Once it goes through its speel, click "Done"
+- Close the Disk Utility window to get back to the "macOS Utilities" window.
+- Now choose the option in the list labled "Reinstall macOS" and click "Continue"
+- From here it will guide you through the steps to a fresh install.
