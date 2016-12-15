@@ -13,7 +13,6 @@ brew 'git-secrets'
 brew 'heroku-toolbelt'
 brew 'httpie'
 brew 'imagemagick'
-brew 'macvim', args: ['override-system-vim']
 brew 'openssl'
 brew 'phantomjs'
 brew 'postgresql'

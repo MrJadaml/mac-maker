@@ -65,6 +65,7 @@ Then run the following command into your terminal:
 ```
 source install.sh
 ```
+Once the main install is finished, open up the `.vimrc` file and type in `:PluginInstall` to install all Vundle packages.
 
 <hr>
 

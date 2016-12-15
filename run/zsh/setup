@@ -16,7 +16,7 @@ case "$SHELL" in
   *)
     if [ -z "$CI" ]; then
       fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)"
+      sudo dscl . change /users/$USER UserShell /bin/bash $(which zsh)
     else
       fancy_echo "CI System detected, will not change shells"
     fi
