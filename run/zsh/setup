@@ -33,16 +33,19 @@ esac
 # http://antigen.sharats.me                                      #
 ##################################################################
 
+if [ ! -d "$HOME/.zsh" ]; then
+  mkdir "$HOME/.zsh"
+fi
+
 if [ ! -f "$HOME/.zsh/antigen/" ]; then
   fancy_echo "Installing the Antigen plugin manager ◬..."
 
-  mkdir "$HOME/.zsh"
   touch "$HOME/.zsh/antigen.zsh"
 
   curl https://cdn.rawgit.com/zsh-users/antigen/v1.2.3/bin/antigen.zsh > ~/.zsh/antigen.zsh
 
   append_to_file "$HOME/.zshrc" 'ZSH="$HOME/.zsh"'
-  append_to_file "$HOME/.zshrc" "source $ZSH/antigen.zsh"
+  append_to_file "$HOME/.zshrc" 'source "$ZSH/antigen.zsh"'
 
   fancy_echo "Bundling antigen plugins ..."
 

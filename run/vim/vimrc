@@ -8,13 +8,16 @@ call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'tpope/vim-fugitive'
 
+  Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
+  Plugin 'easymotion/vim-easymotion'
   Plugin 'pangloss/vim-javascript'
   Plugin 'bronson/vim-trailing-whitespace'
   Plugin 'mxw/vim-jsx'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-markdown'
+  Plugin 'bling/vim-airline'
   Plugin 'kien/ctrlp.vim'
   Plugin 'elzr/vim-json'
   Plugin 'ap/vim-css-color'
@@ -43,6 +46,9 @@ set number
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
+" Adds mouse functionality in all modes
+set mouse=a
 
 " clear all trailing whitespace
 nmap <leader>nw :FixWhitespace<CR>

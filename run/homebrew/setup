@@ -22,11 +22,11 @@ else
 fi
 
 fancy_echo "Installing formulas and casks from the Brewfile 🍺..."
-brew bundle --file=./Brewfile
+brew bundle --file=./run/homebrew/Brewfile
 
 echo "Installing cask apps..."
-brew bundle --file=./brew-casks
+brew bundle --file=./run/homebrew/brew-casks
 
 echo "Installing Mas apps, including Xcode. This may take a little while..."
-brew bundle --file=./brew-mas
+brew bundle --file=./run/homebrew/brew-mas
 

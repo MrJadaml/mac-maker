@@ -3,8 +3,6 @@
 # import helper functions
 source ./helpers/main
 
-# Welcome to the laptop script!
-
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
@@ -14,9 +12,10 @@ if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"
 fi
 
-source ./run/zsh/setup
-
 source ./run/homebrew/setup
+
+source ./run/zsh/setup
+source ./run/vim/setup
 
 source ./run/node/setup
 source ./run/python/setup
