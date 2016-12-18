@@ -1,4 +1,1 @@
 mas 'Xcode', id: 497799835
-
-# needs full Xcode to install
-brew 'macvim', args: ['override-system-vim']

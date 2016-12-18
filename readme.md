@@ -17,7 +17,6 @@ It is recommended that you look over this file and the supporting *brew-casks* a
 Note that Xcode is one of the items included in the `mas` bundle.
 It has been isolated to its own *xcode-install* file as a convenience to allow for an optional install durring run time,
 due to its hell-ishly long install times ⏰.
-Also included in the *xcode-install* file is MacVim as it is dependent on the full Xcode library to be installed itself.
 
 After the Brew process is finished the *install.sh* script will begin to source the individual system modules to be installed.
 If you do not wish to have a particular module installed on your machine simply delete,
@@ -51,7 +50,7 @@ tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/
 Moves into */projects* directory and untars the tar downlaoded file.
 
 ```sh
-rsync -a ~/projects/Mrjadaml* ~/projects/dotfiles && rm -rf ~/projects/Mrjadaml*
+cd ~/projects && mv Mrjadaml* dotfiles
 ```
 
 Changes the name of the untared directory from "Mrjadam-mac-maker-[SHA]" to "dotfiles"

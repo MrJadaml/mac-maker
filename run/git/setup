@@ -1,5 +1,7 @@
 #!/bin/sh
 
+fancy_echo 'Setting up Git...'
+
 echo -n "Enter the email address you would like to use for git: "
 read git_email
 
@@ -10,3 +12,7 @@ git config --global user.email $git_email
 git config --global user.name $git_username
 
 git config --global color.ui true
+
+git config -l
+
+echo "...Your git config is set."

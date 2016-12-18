@@ -39,7 +39,7 @@ read -p "Do you want to install Xcode now? It could take a while. [Y/n]: " -n 1 
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "Installing Xcode and MacVim..."
+  echo "Installing Xcode..."
   brew bundle --file=./run/homebrew/xcode-install
 
   # Ensure xcode-select is is pointing at full Xcode
@@ -48,6 +48,8 @@ then
   # Accept Xcode licence
   sudo xcodebuild -license accept
 
+
   echo "Installing MacVim (dependent on full Xcode install)..."
-  brew 'macvim', args: ['override-system-vim']
+  brew unlink vim
+  brew install macvim --with-override-system-vim
 fi
