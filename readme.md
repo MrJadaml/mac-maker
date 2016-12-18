@@ -1,13 +1,10 @@
 # 🔧 Welcome to My Mac-Maker 💻
 
-This is, yet another, dev environment start-up script. My goal
-here was to break down the particular items being installed into
-individual modules. Each module is then sourced in with a single line in
-the main *install.sh* script. That makes it real easy to remove anything
-you do not want without worry of breaking other parts of this build.
-Likewise, if there is anything you think is missing that you want to
-add, the structure makes personal customization of this script really
-straight forward.
+This is, yet another, dev environment start-up script.
+My goal here is to break down the particular items being installed into individual modules.
+Each module is then sourced from the main *install.sh* script with `source ./run/[MODULE]/setup`.
+This makes it real easy to remove anything you do not want without worry of breaking other parts of this build.
+Likewise, this structure lends itself to being extended with any modules of your own.
 
 <hr>
 
@@ -15,38 +12,58 @@ straight forward.
 
 The *install.sh* script is what will be run upon executing the start-up command listed below.
 This script will get Brew up and running on your machine 🍻.
-Durring the Brew install process the Brewfile will be ran which installs a number of binarys, libraries and applications.
+The Brewfile will install a number of binarys, libraries and applications durring the Brew install process.
 It is recommended that you look over this file and the supporting *brew-casks* and *brew-mas* files to customize the setup to your liking.
-Do note that Xcode is one of the items added in the `mas` bundle and can take quite a while to install ⏰.
+Note that Xcode is one of the items included in the `mas` bundle.
+It has been isolated to its own *xcode-install* file as a convenience to allow for an optional install durring run time,
+due to its hell-ishly long install times ⏰.
+Also included in the *xcode-install* file is MacVim as it is dependent on the full Xcode library to be installed itself.
 
-After the Brew process is finished the *install.sh* script will begin to source the individual system modules/libraries to be installed.
-If you do not wish to have a particular module or library installed on your machine simply delete or comment out the line in the *install.sh* script where it is sourced in.
+After the Brew process is finished the *install.sh* script will begin to source the individual system modules to be installed.
+If you do not wish to have a particular module installed on your machine simply delete,
+or comment out, the line in the *install.sh* script where it is sourced.
 
 All modules are organized together in the **run** 📂.
 In each of their respective directories lives a *setup* script, which is what is sourced in the main *install.sh* script.
 Some of the individual modules have additional dotfiles or supporting scripts files.
-These may be files that will be symlinked into *your* **HOME** 📂,
-or are provided as alternative options or further modularization for organizational purposes.
-For example in the *zsh* module both *antigen* (my personal preference) and *oh-my-zsh* are included.
+These may be files that will be symlinked into your **HOME** 📂,
+provided as alternative install options, further modularization, or organizational purposes.
+For example in the *zsh* module both *antigen* (my personal preference) and *oh-my-zsh* are included (pick your ☠).
 
 <hr>
 
 ## Install Instructions
 
-The following command will pull down this repo onto your machine, creating a `~/projects/dotfiles/` directory structure.
+### 💾 Download...
+
+Run the following commands:
 
 ```sh
-curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o ~/projects/dotfiles.tar.gz &&
+curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o ~/projects/dotfiles.tar.gz
+```
+
+Pulls down tar file of this repo onto your machine while creating a */projects* directory.
+
+```sh
 tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/ &&
+```
+
+Moves into */projects* directory and untars the tar downlaoded file.
+
+```sh
 mv ~/projects/Mrjadaml* ~/projects/dotfiles
 ```
 
-Once the project is copied down I suggest you peek through it and make any modifications to suit your personal preferences.
+Changes the name of the untared directory from "Mrjadam-mac-maker-[SHA]" to "dotfiles"
+
+### ❄️ Personalize...
+
+Once the project is copied I suggest you rummage through it and make any modifications to suit your personal preferences.
 
 There is an optional Brew mas setup for Apple Store apps that you will be prompted about durring installation.
 Please have your email and password for the Apple Store ready.
 
-### Just run the script already!
+### 📝 Install...
 
 Be sure you are in the *dotfiles* directory.
 
@@ -59,7 +76,22 @@ Then run the following command into your terminal:
 ```
 source install.sh
 ```
-Once the main install is finished, open up the `.vimrc` file and type in `:PluginInstall` to install all Vundle packages.
+
+#### ␛ Install Vim plugins...
+
+For those who are using vim, once the main install is finished, open up the *.vimrc* file with vim.
+
+```sh
+vim ~/.vimrc
+```
+
+And while in vim install all the Vundle packages.
+
+```sh
+:PluginInstall
+```
+
+⚠️ Note: Some of the settings require the system to be logged out and back in before taking effect.
 
 <hr>
 
