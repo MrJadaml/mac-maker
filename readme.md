@@ -45,13 +45,13 @@ curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o
 Pulls down tar file of this repo onto your machine while creating a */projects* directory.
 
 ```sh
-tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/ &&
+tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/
 ```
 
 Moves into */projects* directory and untars the tar downlaoded file.
 
 ```sh
-mv ~/projects/Mrjadaml* ~/projects/dotfiles
+rsync -a ~/projects/Mrjadaml* ~/projects/dotfiles && rm -rf ~/projects/Mrjadaml*
 ```
 
 Changes the name of the untared directory from "Mrjadam-mac-maker-[SHA]" to "dotfiles"

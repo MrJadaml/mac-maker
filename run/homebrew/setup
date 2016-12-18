@@ -41,4 +41,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Installing Xcode and MacVim..."
   brew bundle --file=./run/homebrew/xcode-install
+
+  # Ensure xcode-select is is pointing at full Xcode
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+  # Accept Xcode licence
+  sudo xcodebuild -license accept
+
+  echo "Installing MacVim (dependent on full Xcode install)..."
+  brew 'macvim', args: ['override-system-vim']
 fi
