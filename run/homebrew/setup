@@ -27,8 +27,13 @@ brew bundle --file=./run/homebrew/Brewfile
 echo "Installing cask apps..."
 brew bundle --file=./run/homebrew/brew-casks
 
-echo "Installing Mas apps, including Xcode. This may take a little while..."
-brew bundle --file=./run/homebrew/brew-mas
+read -p "Do you want to install apps from the App Store now? It will require your Apple credentials. [Y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo "Installing Mas apps, including Xcode. This may take a little while..."
+  brew bundle --file=./run/homebrew/brew-mas
+fi
 
 read -p "Do you want to install Xcode now? It could take a while. [Y/n]" -n 1 -r
 echo
@@ -37,4 +42,3 @@ then
   echo "Installing Xcode and MacVim..."
   brew bundle --file=./run/homebrew/xcode-install
 fi
-
