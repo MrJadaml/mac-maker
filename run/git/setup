@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo -n "Enter the email address you would like to use for git: "
+read git_email
+
+echo -n "Enter the user name you would like to use for git: "
+read git_username
+
+git config --global user.email $git_email
+git config --global user.name $git_username
+
+git config --global color.ui true

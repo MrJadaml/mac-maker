@@ -21,6 +21,7 @@ source ./run/node/setup
 source ./run/python/setup
 source ./run/ruby/setup
 
+source ./run/git/setup
 source ./run/osx/setup
 
 fancy_echo "All done!"

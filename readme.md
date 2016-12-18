@@ -38,7 +38,7 @@ The following command will pull down this repo onto your machine, creating a `~/
 ```sh
 curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o ~/projects/dotfiles.tar.gz &&
 tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/ &&
-mv Mrjadaml* dotfiles
+mv ~/projects/Mrjadaml* ~/projects/dotfiles
 ```
 
 Once the project is copied down I suggest you peek through it and make any modifications to suit your personal preferences.
@@ -81,7 +81,7 @@ Once the main install is finished, open up the `.vimrc` file and type in `:Plugi
 
 [Python 3]: https://www.python.org/download/releases/3.0/
 [Pyenv]: https://github.com/yyuu/pyenv
-[Virturalenvwrapper]: https://virtualenvwrapper.readthedocs.io/en/latest/
+[Virtualenvwrapper]: https://virtualenvwrapper.readthedocs.io/en/latest/
 
 #### Ruby
 
