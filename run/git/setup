@@ -1,18 +1,43 @@
 #!/bin/sh
 
-fancy_echo 'Setting up Git...'
-
 echo -n "Enter the email address you would like to use for git: "
-read git_email
+read GIT_EMAIL
 
-echo -n "Enter the user name you would like to use for git: "
-read git_username
+echo -n "Enter the username you would like to use for git/Github: "
+read GIT_USERNAME
 
-git config --global user.email $git_email
-git config --global user.name $git_username
+git config --global user.email $GIT_EMAIL
+git config --global user.name $GIT_USERNAME
 
 git config --global color.ui true
 
+git config --global core.excludesfile ~/.gitignore_global
+cat ./gitignore_global_base >> ~/.gitignore_global
+
 git config -l
 
+
+read -k 1 "REPLY?Do you want add an SSH key for Github? It will require your Github password. [Y/n]: "
+echo
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo -n "Enter your Github password: "
+  read -s GITHUB_PASSWORD
+  echo
+
+  echo -n "What is the title you want to give your SSH key?: "
+  read SSH_TITLE
+
+  ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/github -C "$GIT_EMAIL"
+  RSA_KEY=$(echo $(cat ~/.ssh/github.pub))
+
+  curl -H "Content-Type: application/json" -u ${GIT_USERNAME}:${GITHUB_PASSWORD} -X POST -d '{"title": "'"${SSH_TITLE}"'", "key": "'"${RSA_KEY}"'"}' https://api.github.com/user/keys
+
+  chmod 600 ~/.ssh/github
+  ssh-add ~/.ssh/github
+  ssh-keyscan github.com >> ~/.ssh/known_hosts
+  ssh -T git@github.com
+fi
+
 echo "...Your git config is set."
+

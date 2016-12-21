@@ -62,6 +62,9 @@ nnoremap cp :set invpaste paste?<CR>
 set pastetoggle=cp
 set showmode
 
+" Airline, always show airline bar
+set laststatus=2
+
 " NERDtree
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 21
