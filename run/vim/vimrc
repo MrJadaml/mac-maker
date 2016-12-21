@@ -22,6 +22,7 @@ call vundle#begin()
   Plugin 'kien/ctrlp.vim'
   Plugin 'elzr/vim-json'
   Plugin 'ap/vim-css-color'
+  Plugin 'valloric/youcompleteme'
 call vundle#end()
 
 filetype plugin indent on    " required
@@ -48,6 +49,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" Turn on syntax highlighting.
+syntax on
+
 " Adds mouse functionality in all modes
 set mouse=a
 
@@ -61,8 +65,9 @@ set showmode
 " NERDtree
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 21
+
 " open nerd tree w ctrl n
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-\> :NERDTreeToggle<CR>
 
 " Press i to enter insert mode, and ii to exit.
 :imap ii <Esc>

@@ -90,6 +90,23 @@ And while in vim install all the Vundle packages.
 :PluginInstall
 ```
 
+For those using the YouCompleteMe plugin with Vim you will need to [run a couple additional commands](https://github.com/Valloric/YouCompleteMe#mac-os-x) after you install your plugins.
+Move into the YouCompleteMe binary directory:
+
+```sh
+cd ~/.vim/bundle/YouCompleteMe
+```
+
+Then run one, or both, of the following commands:
+
+```sh
+# for JavaScript support:
+./install.py --tern-completer
+
+# for C# support:
+./install.py --omnisharp-completer
+```
+
 ⚠️ Note: Some of the settings require the system to be logged out and back in before taking effect.
 
 <hr>
