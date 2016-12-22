@@ -23,6 +23,12 @@ case "$SHELL" in
     ;;
 esac
 
+echo "Setting up z direcotry navigation..."
+echo "# z directory navigation" >> ~/.zshrc
+echo ". /usr/local/etc/profile.d/z.sh" >> ~/.zshrc
+touch ~/.z
+echo "...z has been configured"
+
 # `Source` is not currently working as expected. Running Antigen directly for the time being.
 # source ./antigen/setup
 

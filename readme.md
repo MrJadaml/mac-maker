@@ -97,14 +97,11 @@ Move into the YouCompleteMe binary directory:
 cd ~/.vim/bundle/YouCompleteMe
 ```
 
-Then run one, or both, of the following commands:
+The "tern" flag will provide JS support.
 
 ```sh
 # for JavaScript support:
 ./install.py --tern-completer
-
-# for C# support:
-./install.py --omnisharp-completer
 ```
 
 ⚠️ Note: Some of the settings require the system to be logged out and back in before taking effect.
@@ -149,6 +146,7 @@ Then run one, or both, of the following commands:
 - [httpie] - Command line HTTP client with an intuitive UI, JSON support, syntax highlighting.
 - [imagemagick] - Create, edit, compose, or convert bitmap images.
 - [mas] - Mac App Store command line interface.
+- [mono] - Open source project to create Ecma compliant, .NET tools for C#.
 - [openssl] - Open source toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
 - [phantomjs] - Headless web browser scriptable with a JavaScript API.
 - [postgresql] - An open source relational database management system (DBMS).
@@ -157,6 +155,7 @@ Then run one, or both, of the following commands:
 - [tmux] - A terminal multiplexer.
 - [vim] - Highly configurable text editor built in with most UNIX systems | update.
 - [wget] - A non-interactive CLI for retrieving files using HTTP, HTTPS and FTP.
+- [z] - A more convenient `cd` which tracks your most used directories, based on 'frecency'.
 
 [Homebrew]: http://brew.sh/
 [ctags]: http://ctags.sourceforge.net/
@@ -166,6 +165,7 @@ Then run one, or both, of the following commands:
 [httpie]: https://httpie.org/
 [imagemagick]: https://www.imagemagick.org/script/index.php
 [mas]: https://github.com/mas-cli/mas
+[mono]: http://www.mono-project.com/
 [openssl]: https://www.openssl.org/
 [phantomjs]: http://phantomjs.org/
 [postgresql]: https://www.postgresql.org/
@@ -174,6 +174,7 @@ Then run one, or both, of the following commands:
 [tmux]: https://tmux.github.io/
 [vim]: http://www.vim.org/
 [wget]: https://www.gnu.org/software/wget/
+[z]: https://github.com/rupa/z
 
 #### Shell
 

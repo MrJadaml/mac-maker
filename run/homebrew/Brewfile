@@ -24,6 +24,7 @@ brew 'tmux', args: ['reattach-to-user-namespace']
 brew 'vim'
 brew 'wget'
 brew 'zsh'
+brew 'z'
 
 # start psql cluster
 # brew services start postgresql

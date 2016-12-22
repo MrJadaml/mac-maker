@@ -14,6 +14,7 @@ call vundle#begin()
   Plugin 'pangloss/vim-javascript'
   Plugin 'bronson/vim-trailing-whitespace'
   Plugin 'mxw/vim-jsx'
+  Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-markdown'
   Plugin 'tpope/vim-fugitive'
@@ -69,8 +70,11 @@ set laststatus=2
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 21
 
-" open nerd tree w ctrl n
+" open NERDTree w ctrl \
 nmap <C-\> :NERDTreeToggle<CR>
+
+" CTRLP ignore files
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Press i to enter insert mode, and ii to exit.
 :imap ii <Esc>

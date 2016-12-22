@@ -5,3 +5,4 @@ fancy_echo "Setting up Vim ..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ln -s ~/projects/dotfiles/run/vim/vimrc ~/.vimrc
+ln -s ~/projects/dotfiles/run/vim/tern-config ~/.tern-config

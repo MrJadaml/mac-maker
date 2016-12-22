@@ -1,0 +1,18 @@
+{
+    "libs": [
+        "browser",
+        "jquery",
+        "ecma5",
+        "ecma6"
+    ],
+    "dontLoad": [
+        "node_modules/**"
+    ],
+    "plugins": {
+        "node": {},
+        "complete_strings": {
+          "maxLength": 15
+        },
+    },
+    "ecmaVersion": 6
+}
