@@ -37,6 +37,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ssh-add ~/.ssh/github
   ssh-keyscan github.com >> ~/.ssh/known_hosts
   ssh -T git@github.com
+  echo "Host github.com" >> ~/.ssh/config
+  echo "  IdentityFile ~/.ssh/github" >> ~/.ssh/config
 fi
 
 echo "...Your git config is set."
