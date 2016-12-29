@@ -11,6 +11,7 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'easymotion/vim-easymotion'
+  Plugin 'edkolev/tmuxline.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'bronson/vim-trailing-whitespace'
   Plugin 'mxw/vim-jsx'
@@ -50,6 +51,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" Copy to system clipboard
+:set clipboard=unnamed
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -65,6 +69,9 @@ set showmode
 
 " Airline, always show airline bar
 set laststatus=2
+let g:airline_powerline_fonts = 1
+
+let g:tmuxline_preset = 'nightly_fox'
 
 " NERDtree
 let g:NERDTreeWinPos = "left"
@@ -76,11 +83,21 @@ nmap <C-\> :NERDTreeToggle<CR>
 " CTRLP ignore files
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-" Press i to enter insert mode, and ii to exit.
-:imap ii <Esc>
+" Toggles indent guides
+nmap <leader>dn :IndentGuidesToggle<CR>
+
+" jj to exit INSERT mode.
+:imap jj <Esc>
 
 if has("autocmd")
   autocmd! bufwritepost .vimrc source $MYVIMRC
 endif
 
+" Open this file from any vim session.
 nmap <leader>v :tabedit $MYVIMRC<CR>
+
+" Line number gutter colors
+highlight LineNr ctermfg=57 ctermbg=233 guifg=Purple guibg=DarkGray
+highlight SignColumn ctermbg=233 guibg=DarkGray
+
+

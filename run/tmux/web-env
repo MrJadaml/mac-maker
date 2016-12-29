@@ -1,0 +1,7 @@
+tmux new-session -s development -n editor -d
+tmux send-keys -t development 'vim .' C-m
+tmux split-window -v -p 10 -t development
+tmux split-window -h -p 30 -t development:1.1
+tmux send-keys -t development 'npm start' C-m
+tmux attach -t development
+

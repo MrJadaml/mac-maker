@@ -1,0 +1,4 @@
+tmux new-session -s Dev -n editor -d
+tmux send-keys -t Dev 'vim .' C-m
+tmux split-window -v -p 10 -t Dev
+tmux attach -t Dev

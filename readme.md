@@ -76,9 +76,11 @@ Then run the following command into your terminal:
 source install.sh
 ```
 
-#### ␛ Install Vim plugins...
+#### ␛ Vim & Tmux Setup...
 
-For those who are using vim, once the main install is finished, open up the *.vimrc* file with vim.
+##### Plugins Install
+
+For those who are using Vim, once the main install is finished, open up the *.vimrc* file with Vim.
 
 ```sh
 vim ~/.vimrc
@@ -89,6 +91,8 @@ And while in vim install all the Vundle packages.
 ```sh
 :PluginInstall
 ```
+
+##### YouCompleteMe config
 
 For those using the YouCompleteMe plugin with Vim you will need to [run a couple additional commands](https://github.com/Valloric/YouCompleteMe#mac-os-x) after you install your plugins.
 Move into the YouCompleteMe binary directory:
@@ -103,6 +107,12 @@ The "tern" flag will provide JS support.
 # for JavaScript support:
 ./install.py --tern-completer
 ```
+
+##### Powerline fonts config
+
+In iTerm, move to the Text options by selecting iTerm2 > Preferences > Profile > Text
+In the Text preferences pane, enable the "Use a different font for non-ASCII text" option.
+Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 
 ⚠️ Note: Some of the settings require the system to be logged out and back in before taking effect.
 
@@ -199,6 +209,7 @@ The "tern" flag will provide JS support.
 - [Google chrome] - Google's web browser.
 - [Google chrome canary] - Google's web browser with beta features.
 - [iterm2] - A terminal emulator and replacement for Mac's default Terminal app.
+- [Screenhero] - Coding oriented screen share with multi mouse/cursor.
 - [Slack] - A messaging app (corporate IRC 👔).
 
 [Atom]: https://atom.io/
@@ -210,6 +221,7 @@ The "tern" flag will provide JS support.
 [Google chrome]: https://www.google.com/chrome/
 [Google chrome canary]: https://www.google.com/chrome/browser/canary.html
 [iterm2]: https://www.iterm2.com/
+[Screenhero]: https://screenhero.com/
 [Slack]: https://slack.com/
 
 #### App Store - Homebrew Mas
