@@ -16,6 +16,7 @@ call vundle#begin()
   Plugin 'bronson/vim-trailing-whitespace'
   Plugin 'mxw/vim-jsx'
   Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'rizzatti/dash.vim'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-markdown'
   Plugin 'tpope/vim-fugitive'
@@ -50,6 +51,9 @@ set number
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
+" Save file on focus loss
+autocmd BufLeave,FocusLost * silent! wall
 
 " Copy to system clipboard
 :set clipboard=unnamed
