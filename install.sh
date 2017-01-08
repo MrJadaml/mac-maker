@@ -12,9 +12,10 @@ if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"
 fi
 
+source ./run/zsh/setup
+
 source ./run/homebrew/setup
 
-source ./run/zsh/setup
 source ./run/vim/setup
 source ./run/tmux/setup
 

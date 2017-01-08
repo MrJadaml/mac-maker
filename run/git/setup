@@ -12,7 +12,7 @@ git config --global user.name $GIT_USERNAME
 git config --global color.ui true
 
 git config --global core.excludesfile ~/.gitignore_global
-cat ./gitignore_global_base >> ~/.gitignore_global
+cat ~/projects/dotfiles/run/git/gitignore_global_base >> ~/.gitignore_global
 
 git config -l
 
@@ -36,7 +36,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   chmod 600 ~/.ssh/github
   ssh-add ~/.ssh/github
   ssh-keyscan github.com >> ~/.ssh/known_hosts
-  ssh -T git@github.com
+
+  # causing process failur
+  # ssh -T git@github.com
+
   echo "Host github.com" >> ~/.ssh/config
   echo "  IdentityFile ~/.ssh/github" >> ~/.ssh/config
 fi

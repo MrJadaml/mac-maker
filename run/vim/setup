@@ -2,7 +2,18 @@
 
 fancy_echo "Setting up Vim ..."
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
-ln -s ~/projects/dotfiles/run/vim/vimrc ~/.vimrc
-ln -s ~/projects/dotfiles/run/vim/tern-config ~/.tern-config
+if [ -f "$HOME/.vimrc"]; then
+  echo "Moving current ~/.vimrc file to ~/.vimrc_temp"
+  mv ~/.vimrc ~/.vimrc_temp
+  ln -s ~/projects/dotfiles/run/vim/vimrc ~/.vimrc
+fi
+
+if [ -f "$HOME/.tern-config" ]; then
+  echo "Moving current ~/.tern-config file to ~/.tern-config_temp"
+  mv ~/.tern-config ~/.tern-config_temp
+  ln -s ~/projects/dotfiles/run/vim/tern-config ~/.tern-config
+fi
