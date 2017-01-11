@@ -27,7 +27,7 @@ brew bundle --file=./run/homebrew/Brewfile
 echo "Installing cask apps..."
 brew bundle --file=./run/homebrew/brew-casks
 
-read -k 1 "Do you want to install apps from the App Store now? It will require your Apple credentials. [Y/n]: "
+read -k 1 "?Do you want to install apps from the App Store now? It will require your Apple credentials. [Y/n]: "
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -35,7 +35,7 @@ then
   brew bundle --file=./run/homebrew/brew-mas
 fi
 
-read -k 1 "Do you want to install Xcode now? It could take a while. [Y/n]: "
+read -k 1 "?Do you want to install Xcode now? It could take a while. [Y/n]: "
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

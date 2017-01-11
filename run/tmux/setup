@@ -2,12 +2,30 @@
 
 fancy_echo "Setting up Tmux..."
 
-ln -s ~/projects/dotfiles/run/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/projects/dotfiles/run/tmux/web-env ~/.tmux.web-env
-ln -s ~/projects/dotfiles/run/tmux/dev-env ~/.tmux.dev-env
+# tmux configuration file
+if [ -f "$HOME/.tmux.conf" ]; then
+  echo "Moving current ~/.tmux.conf file to ~/.tmux.conf_temp"
+  mv ~/.tmux.conf ~/.tmux.conf_temp
+  ln -s ~/projects/dotfiles/run/tmux/tmux.conf ~/.tmux.conf
+fi
+
+# tmux environment setup scripts
+if [ -f "$HOME/.tmux.web-env" ]; then
+  echo "Moving current ~/.tmux.web-env file to ~/.tmux.web-env_temp"
+  mv ~/.tmux.web-env ~/.tmux.web-env_temp
+  ln -s ~/projects/dotfiles/run/tmux/web-env ~/.tmux.web-env
+fi
+
+if [ -f "$HOME/.tmux.dev-env" ]; then
+  echo "Moving current ~/.tmux.dev-env file to ~/.tmux.dev-env_temp"
+  mv ~/.tmux.dev-env ~/.tmux.dev-env_temp
+  ln -s ~/projects/dotfiles/run/tmux/dev-env ~/.tmux.dev-env
+fi
 
 # Install Powerline fonts
-git clone https://github.com/powerline/fonts ~/Library/fonts/
-~/Library/Fonts/./install.sh
+if [ ! -d "$HOME/Library/Fonts/powerline" ]; then
+  git clone https://github.com/powerline/fonts ~/Library/Fonts/powerline/
+  ~/Library/Fonts/powerline ./install.sh
+fi
 
 echo "Follow directions in README to finalize Powerline fonts config..."

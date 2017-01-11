@@ -6,7 +6,7 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-if [ -f "$HOME/.vimrc"]; then
+if [ -f "$HOME/.vimrc" ]; then
   echo "Moving current ~/.vimrc file to ~/.vimrc_temp"
   mv ~/.vimrc ~/.vimrc_temp
   ln -s ~/projects/dotfiles/run/vim/vimrc ~/.vimrc
