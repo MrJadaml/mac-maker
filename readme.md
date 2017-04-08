@@ -76,6 +76,8 @@ Then run the following command into your terminal:
 source install.sh
 ```
 
+When it promts you to enter your password, be sure to check if it is asking for your computer password or your appleID password.
+
 #### Accept Xcode Agreement
 
 To accept the Xcode agreement from the terminal, run the following command in your terminal:
