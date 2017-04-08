@@ -13,7 +13,7 @@ Likewise, this structure lends itself to being extended with any modules of your
 The *install.sh* script is what will be run upon executing the start-up command listed below.
 This script will get Brew up and running on your machine 🍻.
 The Brewfile will install a number of binarys, libraries and applications durring the Brew install process.
-It is recommended that you look over this file and the supporting *brew-casks* and *brew-mas* files to customize the setup to your liking.
+It is recommended that you look over this file and the supporting *brew-casks* and *brew-mas* files to customize the setup to your liking. Any applications that are paid apps must be purchased with the apple id you are using before running the script.
 Note that Xcode is one of the items included in the `mas` bundle.
 It has been isolated to its own *xcode-install* file as a convenience to allow for an optional install durring run time,
 due to its hell-ishly long install times ⏰.
@@ -38,22 +38,22 @@ For example in the *zsh* module both *antigen* (my personal preference) and *oh-
 Run the following commands:
 
 ```sh
-curl -L https://api.github.com/repos/mrjadaml/mac-maker/tarball --create-dirs -o ~/projects/dotfiles.tar.gz
+curl -L https://api.github.com/repos/MrJadaml/mac-maker/tarball --create-dirs -o ~/Projects/dotfiles.tar.gz
 ```
 
-Pulls down tar file of this repo onto your machine while creating a */projects* directory.
+Pulls down tar file of this repo onto your machine while creating a */Projects* directory.
 
 ```sh
-tar -zxvf ~/projects/dotfiles.tar.gz -C ~/projects/
+tar -zxvf ~/Projects/dotfiles.tar.gz -C ~/Projects/
 ```
 
-Moves into */projects* directory and untars the tar downlaoded file.
+Moves into */Projects* directory and untars the tar downlaoded file.
 
 ```sh
-cd ~/projects && mv Mrjadaml* dotfiles
+cd ~/projects && mv MrJadaml* dotfiles
 ```
 
-Changes the name of the untared directory from "Mrjadam-mac-maker-[SHA]" to "dotfiles"
+Changes the name of the untared directory from "MrJadam-mac-maker-[SHA]" to "dotfiles"
 
 ### ❄️ Personalize...
 
@@ -67,13 +67,21 @@ Please have your email and password for the Apple Store ready.
 Be sure you are in the *dotfiles* directory.
 
 ```
-cd ~/projects/dotfiles
+cd ~/Projects/dotfiles
 ```
 
 Then run the following command into your terminal:
 
 ```
 source install.sh
+```
+
+#### Accept Xcode Agreement
+
+To accept the Xcode agreement from the terminal, run the following command in your terminal:
+
+```
+sudo xcodebuild -license accept
 ```
 
 #### ␛ Vim & Tmux Setup...
