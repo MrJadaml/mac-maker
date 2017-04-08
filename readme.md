@@ -50,7 +50,7 @@ tar -zxvf ~/Projects/dotfiles.tar.gz -C ~/Projects/
 Moves into */Projects* directory and untars the tar downlaoded file.
 
 ```sh
-cd ~/projects && mv MrJadaml* dotfiles
+cd ~/Projects && mv MrJadaml* dotfiles
 ```
 
 Changes the name of the untared directory from "MrJadam-mac-maker-[SHA]" to "dotfiles"
