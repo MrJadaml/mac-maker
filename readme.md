@@ -8,7 +8,7 @@ Likewise, this structure lends itself to being extended with any modules of your
 
 <hr>
 
-## Project Ogranization
+## Project Organization
 
 The *install.sh* script is what will be run upon executing the start-up command listed below.
 This script will get Brew up and running on your machine 🍻.
@@ -53,7 +53,7 @@ Moves into */Projects* directory and untars the tar downlaoded file.
 cd ~/Projects && mv MrJadaml* dotfiles
 ```
 
-Changes the name of the untared directory from "MrJadam-mac-maker-[SHA]" to "dotfiles"
+Changes the name of the untared directory from "MrJadaml-mac-maker-[SHA]" to "dotfiles"
 
 ### ❄️ Personalize...
 
