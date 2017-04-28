@@ -29,6 +29,15 @@ echo ". /usr/local/etc/profile.d/z.sh" >> ~/.zshrc
 touch ~/.z
 echo "...z has been configured"
 
+echo "Setting up aliases for zsh..."
+if [ -f "$HOME/.aliases" ]; then
+  echo "Moving current ~/.aliases file to ~/.aliases_temp"
+  mv ~/.aliases ~/.aliases_temp
+  ln -s ~/projects/dotfiles/run/zsh/aliases ~/.aliases
+
+  append_to_file "$HOME/.zshrc" "source $HOME/.aliases"
+fi
+
 # `Source` is not currently working as expected. Running Antigen directly for the time being.
 # source ./antigen/setup
 

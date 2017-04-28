@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Mac DS_Store
+*.DS_Store
+
 # Vim swap files
 .*.sw*
 

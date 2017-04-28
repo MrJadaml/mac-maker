@@ -12,20 +12,20 @@ Likewise, this structure lends itself to being extended with any modules of your
 
 The *install.sh* script is what will be run upon executing the start-up command listed below.
 This script will get Brew up and running on your machine 🍻.
-The Brewfile will install a number of binarys, libraries and applications durring the Brew install process.
+The Brewfile will install a number of binaries, libraries and applications during the Brew install process.
 It is recommended that you look over this file and the supporting *brew-casks* and *brew-mas* files to customize the setup to your liking.
 Note that Xcode is one of the items included in the `mas` bundle.
-It has been isolated to its own *xcode-install* file as a convenience to allow for an optional install durring run time,
+It has been isolated to its own *xcode-install* file as a convenience to allow for an optional install during run time,
 due to its hell-ishly long install times ⏰.
 
 After the Brew process is finished the *install.sh* script will begin to source the individual system modules to be installed.
 If you do not wish to have a particular module installed on your machine simply delete,
 or comment out, the line in the *install.sh* script where it is sourced.
 
-All modules are organized together in the **run** 📂.
+All modules are organized together in the **run** directory.
 In each of their respective directories lives a *setup* script, which is what is sourced in the main *install.sh* script.
 Some of the individual modules have additional dotfiles or supporting scripts files.
-These may be files that will be symlinked into your **HOME** 📂,
+These may be files that will be symlinked into your **HOME** directory,
 provided as alternative install options, further modularization, or organizational purposes.
 For example in the *zsh* module both *antigen* (my personal preference) and *oh-my-zsh* are included (pick your ☠).
 
@@ -59,7 +59,7 @@ Changes the name of the untared directory from "Mrjadam-mac-maker-[SHA]" to "dot
 
 Once the project is copied I suggest you rummage through it and make any modifications to suit your personal preferences.
 
-There is an optional Brew mas setup for Apple Store apps that you will be prompted about durring installation.
+There is an optional Brew mas setup for Apple Store apps that you will be prompted about during installation.
 Please have your email and password for the Apple Store ready.
 
 ### 📝 Install...
@@ -255,11 +255,11 @@ Obviously, back up all the files you don't want to have blown away before going 
 - Restart your computer and hold down `⌘ + r`.
 - Once you see the white  logo and a progress bar you can let go of `⌘ + r`
 - The "macOS Utilities" menu will pop up. Select the "Disk Utility" option from the list.
-- From the sidebar labeled "Internal" click on sub hardive icon labled "Macintosh HD"
+- From the sidebar labeled "Internal" click on sub hardive icon labeled "Macintosh HD"
 - From the row of icons at the top, click "Erase"
 - A popup menu will appear with a field for the "Name" and "Format".
   Just leave the defaults and click the "Erase" button in the bottom right.
 - Once it goes through its speel, click "Done"
 - Close the Disk Utility window to get back to the "macOS Utilities" window.
-- Now choose the option in the list labled "Reinstall macOS" and click "Continue"
+- Now choose the option in the list labeled "Reinstall macOS" and click "Continue"
 - From here it will guide you through the steps to a fresh install.

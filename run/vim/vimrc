@@ -43,6 +43,11 @@ filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" No swap files/backups
+set noswapfile
+set nobackup
+set nowritebackup
+
 " shows relative line number and current line number.
 set relativenumber
 set number
@@ -52,11 +57,14 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" Don't wrap lines
+set nowrap
+
 " Save file on focus loss
 autocmd BufLeave,FocusLost * silent! wall
 
 " Copy to system clipboard
-:set clipboard=unnamed
+set clipboard=unnamed
 
 " Turn on syntax highlighting.
 syntax on
@@ -64,7 +72,10 @@ syntax on
 " Adds mouse functionality in all modes
 set mouse=a
 
-" clear all trailing whitespace
+" Allow resize of vim splits inside tmux
+set ttymouse=sgr
+
+" Clear all trailing whitespace (No Whitespace)
 nmap <leader>nw :FixWhitespace<CR>
 
 nnoremap cp :set invpaste paste?<CR>
@@ -104,4 +115,14 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 highlight LineNr ctermfg=57 ctermbg=233 guifg=Purple guibg=DarkGray
 highlight SignColumn ctermbg=233 guibg=DarkGray
 
+" semi for command mode
+noremap ; :
 
+" Play record shorthand
+nnoremap Q @q
+
+" Markdown mode
+nmap <leader>md :set wrap linebreak textwidth=0<CR>
+
+" Set shell for ctrlP
+set shell=/bin/bash

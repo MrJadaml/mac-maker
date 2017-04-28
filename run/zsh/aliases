@@ -1,0 +1,7 @@
+alias :w='echo "You not in 𝑉im dummy"'
+alias gnore='cat ~/projects/dotfiles/run/git/gitignore_global_base >> .gitignore'
+alias html='cat ~/projects/dotfiles/run/templates/index.html >> index.html'
+alias dev='~/.tmux.dev-env'
+alias web='~/.tmux.web-env'
+alias nt='npm test'
+alias vimrc= vim ~/.vimrc
