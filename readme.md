@@ -222,7 +222,6 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 - [Screenhero] - Coding oriented screen share with multi mouse/cursor.
 - [Slack] - A messaging app (corporate IRC 👔).
 - [Jumpcut] - Keep a record of things that you have copied (clipboard buffering).
-- [Spectacle] - A free alternate to Moom to automate your screen re-sizing.
 
 [Atom]: https://atom.io/
 [Alfred]: https://www.alfredapp.com/
@@ -236,7 +235,6 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 [Screenhero]: https://screenhero.com/
 [Slack]: https://slack.com/
 [Jumpcut]: http://jumpcut.sourceforge.net/
-[Spectacle]: https://www.spectacleapp.com/
 
 #### App Store - Homebrew Mas
 
