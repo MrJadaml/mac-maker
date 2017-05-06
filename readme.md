@@ -211,6 +211,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 - [iterm2] - A terminal emulator and replacement for Mac's default Terminal app.
 - [Screenhero] - Coding oriented screen share with multi mouse/cursor.
 - [Slack] - A messaging app (corporate IRC 👔).
+- [Virtualbox] - A virtual machine application.
 
 [Atom]: https://atom.io/
 [Alfred]: https://www.alfredapp.com/
@@ -223,6 +224,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 [iterm2]: https://www.iterm2.com/
 [Screenhero]: https://screenhero.com/
 [Slack]: https://slack.com/
+[Virtualbox]: https://www.virtualbox.org/
 
 #### App Store - Homebrew Mas
 
@@ -259,7 +261,7 @@ Obviously, back up all the files you don't want to have blown away before going 
 - From the row of icons at the top, click "Erase"
 - A popup menu will appear with a field for the "Name" and "Format".
   Just leave the defaults and click the "Erase" button in the bottom right.
-- Once it goes through its speel, click "Done"
+- Once it goes through its spiel, click "Done"
 - Close the Disk Utility window to get back to the "macOS Utilities" window.
 - Now choose the option in the list labeled "Reinstall macOS" and click "Continue"
 - From here it will guide you through the steps to a fresh install.
