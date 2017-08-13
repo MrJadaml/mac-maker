@@ -7,25 +7,31 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'ap/vim-css-color'
+  Plugin 'bling/vim-airline'
+  Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'easymotion/vim-easymotion'
+  Plugin 'edkolev/tmuxline.vim'
+  Plugin 'elzr/vim-json'
+  Plugin 'KeitaNakamura/neodark.vim'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'mxw/vim-jsx'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'rizzatti/dash.vim'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
-  Plugin 'easymotion/vim-easymotion'
-  Plugin 'edkolev/tmuxline.vim'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'bronson/vim-trailing-whitespace'
-  Plugin 'mxw/vim-jsx'
-  Plugin 'nathanaelkane/vim-indent-guides'
-  Plugin 'rizzatti/dash.vim'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-markdown'
+  Plugin 'terryma/vim-multiple-cursors'
   Plugin 'tpope/vim-fugitive'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'bling/vim-airline'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'elzr/vim-json'
-  Plugin 'ap/vim-css-color'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
   Plugin 'valloric/youcompleteme'
+
+  "Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
 filetype plugin indent on    " required
@@ -42,6 +48,49 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" EXPERIMENTAL CHANGES
+
+" Updates files if ouside changes happen (like git reset HEAD~) auto command for :edit!
+set autoread
+
+
+
+"" THEMES
+
+" Turn on syntax highlighting.
+syntax on
+
+" NeoDark Theme
+let g:neodark#use_256color = 1
+let g:neodark#solid_vertsplit = 1
+let g:neodark#use_custom_terminal_theme = 1 " default: 0
+colorscheme neodark
+
+" Line number gutter colors
+highlight LineNr ctermfg=99 guifg=Purple
+"highlight LineNr guibg=DarkGray ctermbg=233
+"highlight SignColumn ctermbg=233 guibg=DarkGray
+
+
+" Solarized Theme
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+
+" Airline, always show airline bar
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+" Hide file encoding in airline bar
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+let g:tmuxline_preset = 'nightly_fox'
+
+
+" Multicursor select word under cursor
+let g:multi_cursor_start_key='<C-n>'
+let g:multi_cursor_start_word_key='g<C-n>'
 
 " No swap files/backups
 set noswapfile
@@ -66,8 +115,39 @@ autocmd BufLeave,FocusLost * silent! wall
 " Copy to system clipboard
 set clipboard=unnamed
 
-" Turn on syntax highlighting.
-syntax on
+
+"" SEARCH + FILE NAVIGATION
+
+" Highlight search /
+set hlsearch
+noremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
+" Live search highlighting
+:set incsearch
+
+" Ack search
+nnoremap <C-k> :Ack 
+
+" Ack jump word under cursor
+nnoremap <C-j> "zyiw:exe ":Ack ".@z""<CR>
+
+" Set shell for ctrlP
+set shell=/bin/bash
+
+" CTRLP ignore files
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+set wildignore+=.DS_Store,node_modules,bower_*
+set wildignore+=*.swp,*.git*
+
+" NERDtree
+let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinSize = 21
+
+" open NERDTree w ctrl \
+nmap <C-\> :NERDTreeToggle<CR>
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
 " Adds mouse functionality in all modes
 set mouse=a
@@ -82,27 +162,11 @@ nnoremap cp :set invpaste paste?<CR>
 set pastetoggle=cp
 set showmode
 
-" Airline, always show airline bar
-set laststatus=2
-let g:airline_powerline_fonts = 1
-
-let g:tmuxline_preset = 'nightly_fox'
-
-" NERDtree
-let g:NERDTreeWinPos = "left"
-let g:NERDTreeWinSize = 21
-
-" open NERDTree w ctrl \
-nmap <C-\> :NERDTreeToggle<CR>
-
-" CTRLP ignore files
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
 " Toggles indent guides
 nmap <leader>dn :IndentGuidesToggle<CR>
 
-" jj to exit INSERT mode.
-:imap jj <Esc>
+" jj to exit INSERT mode and write.
+:imap jj <Esc>:w<CR>
 
 if has("autocmd")
   autocmd! bufwritepost .vimrc source $MYVIMRC
@@ -111,18 +175,13 @@ endif
 " Open this file from any vim session.
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
-" Line number gutter colors
-highlight LineNr ctermfg=57 ctermbg=233 guifg=Purple guibg=DarkGray
-highlight SignColumn ctermbg=233 guibg=DarkGray
-
 " semi for command mode
 noremap ; :
 
-" Play record shorthand
-nnoremap Q @q
+" Disable Ex mode
+:nnoremap Q <Nop>
 
 " Markdown mode
 nmap <leader>md :set wrap linebreak textwidth=0<CR>
 
-" Set shell for ctrlP
-set shell=/bin/bash
+"" ABBREVIATIONS

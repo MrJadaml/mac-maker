@@ -248,6 +248,10 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 [SnappyApp]: http://snappy-app.com/
 [Xcode]: https://developer.apple.com/xcode/
 
+#### Color Theme 🎨
+
+I am fond of the [NeoDark](https://github.com/KeitaNakamura/neodark.vim) color pallette that can be used across Vim, iTerm, and Tmux to provide a unified theme.
+
 <hr>
 
 #### Quick Reformating Guide. 💾
