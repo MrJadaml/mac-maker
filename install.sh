@@ -20,7 +20,7 @@ source ./run/vim/setup
 source ./run/tmux/setup
 
 source ./run/node/setup
-source ./run/python/setup
+# source ./run/python/setup
 source ./run/ruby/setup
 
 source ./run/git/setup
