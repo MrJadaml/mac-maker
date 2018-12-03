@@ -25,7 +25,7 @@ fi
 # Install Powerline fonts
 if [ ! -d "$HOME/Library/Fonts/powerline" ]; then
   git clone https://github.com/powerline/fonts ~/Library/Fonts/powerline/
-  ~/Library/Fonts/powerline ./install.sh
+  source ~/Library/Fonts/powerline/install.sh
 fi
 
 echo "Follow directions in README to finalize Powerline fonts config..."
