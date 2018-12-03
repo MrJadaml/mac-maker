@@ -152,13 +152,9 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 - [ctags] - Indexes language objects in source files so your text editor can quickly reference them.
 - [git] - Open source version control system | update.
 - [git-secrets] - Prevents you from committing secrets and creds into git repositories.
-- [heroku-toolbelt] - A Heroku CLI.
 - [httpie] - Command line HTTP client with an intuitive UI, JSON support, syntax highlighting.
-- [imagemagick] - Create, edit, compose, or convert bitmap images.
 - [mas] - Mac App Store command line interface.
-- [mono] - Open source project to create Ecma compliant, .NET tools for C#.
 - [openssl] - Open source toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
-- [phantomjs] - Headless web browser scriptable with a JavaScript API.
 - [postgresql] - An open source relational database management system (DBMS).
 - [reattach-to-user-namespace] - Path to enable access to OSX pasteboard for programs run under tmux.
 - [redis] - Open source in-memory data structure store, used as a database, cache and message broker.
@@ -171,13 +167,9 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 [ctags]: http://ctags.sourceforge.net/
 [git]: https://git-scm.com/
 [git-secrets]: https://github.com/awslabs/git-secrets
-[heroku-toolbelt]: https://devcenter.heroku.com/articles/heroku-cli
 [httpie]: https://httpie.org/
-[imagemagick]: https://www.imagemagick.org/script/index.php
 [mas]: https://github.com/mas-cli/mas
-[mono]: http://www.mono-project.com/
 [openssl]: https://www.openssl.org/
-[phantomjs]: http://phantomjs.org/
 [postgresql]: https://www.postgresql.org/
 [reattach-to-user-namespace]: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 [redis]: https://redis.io/
@@ -202,27 +194,21 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 
 - [Atom] - GitHub's open source text editor
 - [Alfred] - Mac Spotlight replacement with more custom and productive actions to control your Mac.
-- [CloudApp] - Sharable screen capture tool with terminal integration.
 - [Dash] - Offline access to 150+ API documentation sets plus script manager.
-- [Dropbox] - Cloud storage.
 - [Firefox] - Mozilla's web browser.
 - [Google chrome] - Google's web browser.
 - [Google chrome canary] - Google's web browser with beta features.
 - [iterm2] - A terminal emulator and replacement for Mac's default Terminal app.
-- [Screenhero] - Coding oriented screen share with multi mouse/cursor.
 - [Slack] - A messaging app (corporate IRC 👔).
 - [Virtualbox] - A virtual machine application.
 
 [Atom]: https://atom.io/
 [Alfred]: https://www.alfredapp.com/
-[CloudApp]: https://www.getcloudapp.com/
 [Dash]: https://kapeli.com/dash
-[Dropbox]: https://www.dropbox.com/
 [Firefox]: https://www.mozilla.org/en-US/firefox/products/
 [Google chrome]: https://www.google.com/chrome/
 [Google chrome canary]: https://www.google.com/chrome/browser/canary.html
 [iterm2]: https://www.iterm2.com/
-[Screenhero]: https://screenhero.com/
 [Slack]: https://slack.com/
 [Virtualbox]: https://www.virtualbox.org/
 
@@ -230,7 +216,6 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 
 - [Evernote] - Note manager app.
 - [Memory Clean] - Memory manager for your toolbar.
-- [Monodraw] - Powerful ASCII art editor designed for the Mac.
 - [Moom] - Window manager.
 - [Pixelmator] - Photo editor.
 - [Pocket] - Article saver/offline reader.
@@ -240,7 +225,6 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 
 [Evernote]: https://evernote.com/
 [Memory Clean]: https://itunes.apple.com/us/app/memory-clean-monitor-free/id451444120?mt=12
-[Monodraw]: https://monodraw.helftone.com/
 [Moom]: https://manytricks.com/moom/
 [Pixelmator]: http://www.pixelmator.com/mac/
 [Pocket]: https://getpocket.com/
