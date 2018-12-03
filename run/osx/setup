@@ -541,7 +541,8 @@ echo "Time Machine..."
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# `disablelocal` errors out as "unrecognized verb"
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 echo "Activity Monitor..."
