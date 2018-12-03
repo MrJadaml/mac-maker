@@ -27,7 +27,10 @@ brew bundle --file=./run/homebrew/Brewfile
 echo "Installing cask apps..."
 brew bundle --file=./run/homebrew/brew-casks
 
-read -k 1 "?Do you want to install apps from the App Store now? It will require your Apple credentials. [Y/n]: "
+# TEMP WORKAROUND: mas-cli `signin` no longer works - https://www.github.com/mas-cli/issues/164
+read -k 1 "?Do you want to install apps from the App Store now? Please manually sign into the Apple Store, then return and enter 'Y'. [Y/n]: "
+#read -k 1 "?Do you want to install apps from the App Store now? It will require your Apple credentials. [Y/n]: "
+
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
