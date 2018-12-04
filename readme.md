@@ -149,6 +149,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 #### Homebrew
 
 - [Homebrew] - Homebrew installs the stuff you need that Apple didn’t.
+- [ack] - Search tool like grep, but optimized for programmers.
 - [ctags] - Indexes language objects in source files so your text editor can quickly reference them.
 - [git] - Open source version control system | update.
 - [git-secrets] - Prevents you from committing secrets and creds into git repositories.
@@ -164,6 +165,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 - [z] - A more convenient `cd` which tracks your most used directories, based on 'frecency'.
 
 [Homebrew]: http://brew.sh/
+[ack]: https://linux.die.net/man/1/ack
 [ctags]: http://ctags.sourceforge.net/
 [git]: https://git-scm.com/
 [git-secrets]: https://github.com/awslabs/git-secrets
