@@ -20,6 +20,7 @@ brew 'redis'
 brew 'tmux', args: ['reattach-to-user-namespace']
 brew 'vim'
 brew 'wget'
+brew 'yarn', args: ['--without-node']
 brew 'zsh'
 brew 'z'
 

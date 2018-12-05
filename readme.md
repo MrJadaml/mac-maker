@@ -161,6 +161,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 - [redis] - Open source in-memory data structure store, used as a database, cache and message broker.
 - [tmux] - A terminal multiplexer.
 - [vim] - Highly configurable text editor built in with most UNIX systems | update.
+- [yarn] - A Javascript package manager with caching - replacement for NPM.
 - [wget] - A non-interactive CLI for retrieving files using HTTP, HTTPS and FTP.
 - [z] - A more convenient `cd` which tracks your most used directories, based on 'frecency'.
 
@@ -177,6 +178,7 @@ Then change the font to one of Powerline options. 13pt Cousine is a good choice.
 [redis]: https://redis.io/
 [tmux]: https://tmux.github.io/
 [vim]: http://www.vim.org/
+[yarn]: https://yarnpkg.com/en/
 [wget]: https://www.gnu.org/software/wget/
 [z]: https://github.com/rupa/z
 
