@@ -68,7 +68,6 @@ if [ ! -f "$HOME/.zsh/antigen/" ]; then
   append_to_file "$HOME/.zshrc" "antigen use oh-my-zsh"
 
   # Oh-my-zsh/default bundles
-  append_to_file "$HOME/.zshrc" "antigen bundle cloudapp"
   append_to_file "$HOME/.zshrc" "antigen bundle common-aliases"
   append_to_file "$HOME/.zshrc" "antigen bundle encode64"
   append_to_file "$HOME/.zshrc" "antigen bundle git"
@@ -78,7 +77,6 @@ if [ ! -f "$HOME/.zsh/antigen/" ]; then
   append_to_file "$HOME/.zshrc" "antigen bundle jsontools"
   append_to_file "$HOME/.zshrc" "antigen bundle lol"
   append_to_file "$HOME/.zshrc" "antigen bundle node"
-  append_to_file "$HOME/.zshrc" "antigen bundle nyan"
   append_to_file "$HOME/.zshrc" "antigen bundle pip"
   append_to_file "$HOME/.zshrc" "antigen bundle tmux"
   append_to_file "$HOME/.zshrc" "antigen bundle web-search"
