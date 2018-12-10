@@ -15,3 +15,4 @@ alias reddit='open -a "/Applications/Google Chrome Canary.app" "https://reddit.c
 alias lulu='open -a "/Applications/Google Chrome Canary.app" "https://github.com/lululemon"'
 alias ecom='open -a "/Applications/Google Chrome Canary.app" "https://github.com/lululemon/ecom-web-app"'
 alias sbar='open -a "/Applications/Google Chrome Canary.app" "https://github.com/lululemon/digital-product-sbar"'
+alias blingpath='echo $PATH | sed $'s/:/\\\n/g'

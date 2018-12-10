@@ -7,6 +7,7 @@ tap 'homebrew/services'
 
 # brew is used for installing MacOS dependencies/binaries
 brew 'ack'
+brew 'awscli'
 brew 'cmake'
 brew 'ctags'
 brew 'bash'
