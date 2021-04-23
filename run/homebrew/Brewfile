@@ -1,8 +1,7 @@
 cask_args appdir: '/Applications'
 
 # taps are Formulaes/commands pulled from a Git repo
-tap 'caskroom/cask'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
 tap 'homebrew/services'
 
 # brew is used for installing MacOS dependencies/binaries
