@@ -15,12 +15,10 @@ brew 'git-secrets'
 brew 'httpie'
 brew 'openssl'
 brew 'postgresql'
-brew 'reattach-to-user-namespace'
 brew 'redis'
-brew 'tmux', args: ['reattach-to-user-namespace']
+brew 'tmux'
 brew 'vim'
 brew 'wget'
-brew 'yarn', args: ['--without-node']
 brew 'zsh'
 brew 'z'
 
